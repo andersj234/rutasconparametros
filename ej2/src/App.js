@@ -9,19 +9,21 @@ function App() {
 
   return (
     <BrowserRouter>
-    <Link to={"/sures1/"+ numero}>sumar y restas 1</Link>
-    <Link to={"/sures2/"+ numero2}>sumas y restas 2</Link>
+
+    <Link to={"/suma"+ numero +"/"+numero2}>sumar</Link>
+    <Link to={"/resta"+ numero +"/"+numero2}>restar</Link>
+    <Link to={"/multi"+ numero +"/"+numero2}></Link>
     <Route>
       <button onClick={()=>{setNumero(numero+1)}}>sumar numero 1</button>
       <button onClick={()=>{setNumero(numero-1)}}>restar numero1</button>
       <button onClick={()=>{setNumero2(numero2+1)}}>sumar numero 2</button>
       <button onClick={()=>{setNumero2(numero2-1)}}>restar numero 2</button>
     </Route>
-    <Route path="/sures1/:numero">
-      <h1>{numero}</h1>
+    <Route path="/suma/:numero/:numero2">
+      <h1>{numero+numero2}</h1>
     </Route>
-    <Route path="/sures2/:numero2">
-    <h1>{numero2}</h1>
+    <Route path="/resta/:numero/:numero2">
+    <h1>{numero-numero2}</h1>
     </Route>
     </BrowserRouter>
   );
